@@ -1644,3 +1644,17 @@ a.info-item {
     overflow: hidden;
 
 }
+.video-box {
+    width: 100%;
+    max-width: 1200px;      /* limits width on large screens */
+    margin: 40px auto;       /* centers the box with space above/below */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2); /* subtle shadow */
+    border-radius: 10px;     /* rounded corners */
+    overflow: hidden;        /* keeps video within rounded corners */
+}
+
+.video-box video {
+    display: block;          /* removes extra bottom spacing */
+    width: 100%;             /* full width of the box */
+    height: auto;            /* maintain aspect ratio */
+}
