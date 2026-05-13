@@ -1627,6 +1627,34 @@ a.info-item {
 		gap: 20px;
 		text-align: center;
 	}
+
+	.stat-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Dark Background */
+.image-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 99999 !important; /* Force it to the absolute top */
+}
+
+.image-popup img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
 }
 .stats-grid {
     display: grid;
