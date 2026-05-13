@@ -11,6 +11,27 @@ https://templatemo.com/tm-600-prism-flux
 
 // Portfolio data for carousel
 
+console.log("Checkpoint: Script loaded");
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("Checkpoint: DOM loaded");
+    document.querySelectorAll(".stat-card img").forEach((img, index) => {
+        img.addEventListener("click", function(e) {
+            console.log("✅ IMAGE CLICKED! Index:", index);
+            console.log("Image source:", this.src);
+            
+            // Check if popup exists
+            const popup = document.getElementById("imagePopup");
+            const popupImg = document.getElementById("popupImg");
+            
+            console.log("Popup Element:", popup);
+            console.log("Popup Img Element:", popupImg);
+        });
+    });
+});
+
+
+
+
       const portfolioData = [
     {
         id: 1,
@@ -481,5 +502,23 @@ https://templatemo.com/tm-600-prism-flux
             const parallax = document.querySelector('.hero');
             if (parallax) {
                 parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
+            }   
         });
+document.addEventListener('DOMContentLoaded', function() {
+    const popup = document.getElementById("imagePopup");
+    const popupImg = document.getElementById("popupImg");
+
+    // SAFETY CHECK: Only run if elements exist
+    if (popup && popupImg) {
+        document.querySelectorAll(".stat-card img").forEach(img => {
+            img.addEventListener("click", () => {
+                popup.classList.add("active");
+                popupImg.src = img.src;
+            });
+        });
+
+        popup.addEventListener("click", () => {
+            popup.classList.remove("active");
+        });
+    }
+});
